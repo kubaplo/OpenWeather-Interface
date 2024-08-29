@@ -1,8 +1,9 @@
-import {type VoidComponent} from 'solid-js';
+import { type VoidComponent } from 'solid-js';
+import type IconProps from '~/types/IconProps';
 
-const Weather: VoidComponent<{class: string}> = (props) => {
+const Weather: VoidComponent<IconProps> = (props) => {
 	return (
-		<svg class={props.class} height="800px" width="800px" viewBox="0 0 512 512">
+		<svg class={props.class} classList={props.classList} height="800px" width="800px" viewBox="0 0 512 512">
 			<g>
 				<path class="st0" d="M55.13,261.431c4.61-4.717,9.607-9.049,14.931-12.963C54.27,232.775,44.49,211.051,44.49,187.03
 					c0-47.838,38.788-86.626,86.634-86.626c32.808,0,61.349,18.246,76.05,45.147c11.372-7.762,23.874-13.947,37.213-18.296l0.64-1.788

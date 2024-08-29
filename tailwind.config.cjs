@@ -22,6 +22,20 @@ module.exports = {
         's': 'var(--secondary)',
         'sl': 'var(--secondary-light)',
         'a': 'var(--accent)'
+      },
+
+      stroke: {
+        'p': 'var(--primary)',
+        's': 'var(--secondary)',
+        'sl': 'var(--secondary-light)',
+        'a': 'var(--accent)'
+      },
+
+      borderColor: {
+        'p': 'var(--primary)',
+        's': 'var(--secondary)',
+        'sl': 'var(--secondary-light)',
+        'a': 'var(--accent)'
       }
     }
   },
