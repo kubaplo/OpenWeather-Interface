@@ -7,7 +7,7 @@ const Root: ParentComponent = (props) => {
   return (
     <div class="flex flex-col items-center min-h-screen">
       <Navigation />
-      <main class="flex flex-col items-center w-full">
+      <main class="flex flex-col items-center w-full flex-1">
         {props.children}
       </main>
       <Footer />
