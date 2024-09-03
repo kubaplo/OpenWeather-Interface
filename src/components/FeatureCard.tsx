@@ -1,8 +1,10 @@
 // SolidJS
+import { A } from "@solidjs/router";
 import { type VoidComponent, For } from "solid-js";
 import type IconProps from "~/types/IconProps";
 
 type FeatureCardProps = {
+  href: string,
   icon: VoidComponent<IconProps>,
   title: string,
   description: string,
@@ -11,7 +13,7 @@ type FeatureCardProps = {
 
 const FeatureCard: VoidComponent<FeatureCardProps> = (props) => {
   return (
-    <div class="group relative flex flex-col items-center gap-y-5 max-w-[400px] h-[500px] p-5 box-border border border-sl rounded-md shadow-xl hover:translate-y-[-10px] hover:shadow-2xl transition-all cursor-pointer">
+    <A href={props.href} class="group relative flex flex-col items-center gap-y-5 max-w-[400px] h-[500px] p-5 box-border border border-sl rounded-md shadow-xl hover:translate-y-[-10px] hover:shadow-2xl transition-all cursor-pointer">
       <div class="flex items-center w-full">
         <props.icon class="w-32 h-fit fill-a" />
         <label class="text-xl text-center w-full font-semibold pointer-events-none">{props.title}</label>
@@ -28,7 +30,7 @@ const FeatureCard: VoidComponent<FeatureCardProps> = (props) => {
           <label class="text-xs sm:text-sm group-hover:text-p transition-all pointer-events-none">Check {props.title.toLowerCase()}</label>
         </div>
       </div>
-    </div>
+    </A>
   );
 }
 

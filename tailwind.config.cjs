@@ -36,6 +36,10 @@ module.exports = {
         's': 'var(--secondary)',
         'sl': 'var(--secondary-light)',
         'a': 'var(--accent)'
+      },
+
+      dropShadow: {
+        'strong': '0 2px 2px rgba(0, 0, 0, 0.8)',
       }
     }
   },
