@@ -14,6 +14,9 @@
   --secondary: #4F4A45;
   --secondary-light: #6C5F5B;
   --accent: #ED7D31;
+  --success: #77DD77;
+  --warning: #FFB347;
+  --error: #FF6961;
 }
 
 body {
