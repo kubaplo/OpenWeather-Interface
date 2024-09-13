@@ -64,7 +64,8 @@ const config: Config = {
       keyframes: {
         floating: {
           '0%, 100%': {transform: 'translateY(0px)'},
-          '50%': {transform: 'translateY(10px)'},
+          '25%': {transform: 'translateY(-5px)'},
+          '75%': {transform: 'translateY(5px)'}
         },
 
         pulsing: {
@@ -74,7 +75,7 @@ const config: Config = {
       },
 
       animation: {
-        floating: 'floating 3s ease-in-out infinite',
+        floating: 'floating 2s linear infinite',
         pulsing: 'pulsing 2s ease-in-out infinite'
       }
     },
