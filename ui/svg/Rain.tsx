@@ -1,6 +1,6 @@
 import IconProps from "@/lib/types/IconProps"
 
-export default function Precipitation({className}: IconProps) {
+export default function Rain({className}: IconProps) {
 	return (
 		<svg className={className} width="800px" height="800px" viewBox="0 0 514.952 514.952">
 			<g>

@@ -18,6 +18,9 @@ import Location from "@/ui/svg/Location";
 // Actions
 import { getGeocode, type GetGeocodeReturnType } from '@/lib/actions/getGeocode';
 
+// Types
+import { type CityType } from '@/lib/types/CityType';
+
 
 function SearchResult({index, value, active, setCurrentSearchResult, currentSearchResultRef, handleCitySelect}: {index: number, value: string, active: boolean, setCurrentSearchResult: React.Dispatch<number>, currentSearchResultRef: React.MutableRefObject<number>, handleCitySelect: () => void}) {
   function handleMouseEnter(e: React.MouseEvent) {
@@ -39,7 +42,7 @@ function SearchResult({index, value, active, setCurrentSearchResult, currentSear
   );
 }
 
-export default function CitySearchBar() {
+export default function CitySearchBar({setCity}: {setCity: React.Dispatch<CityType>}) {
   // States:
   const [currentSearchResult, setCurrentSearchResult] = useState(0);
   const [cityList, setCityList] = useState<GetGeocodeReturnType>([]);
@@ -85,9 +88,7 @@ export default function CitySearchBar() {
 
   function handleCitySelect() {
     if (Array.isArray(cityListRef.current)){
-      console.log(
-        JSON.stringify(cityListRef.current[currentSearchResultRef.current])
-      );
+      setCity(cityListRef.current[currentSearchResultRef.current]);
     }
   }
 

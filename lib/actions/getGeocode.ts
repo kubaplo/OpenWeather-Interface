@@ -1,5 +1,9 @@
 'use server';
 
+// Types
+import { type APIError } from "@/lib/types/Errors";
+
+
 type Geocode = {
   name: string,
   lat: number,
@@ -8,12 +12,7 @@ type Geocode = {
   state: string
 }[];
 
-type Error = {
-  code: number, 
-  message: string
-};
-
-export type GetGeocodeReturnType = Geocode | Error;
+export type GetGeocodeReturnType = Geocode | APIError;
 
 export async function getGeocode(q: string, limit: number): Promise<GetGeocodeReturnType> {
   const query: string = `http://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=${limit}&appid=${process.env.API_KEY}`;

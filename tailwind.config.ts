@@ -7,6 +7,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'g': 'linear-gradient(45deg, var(--gray) 30%, var(--primary) 50%, var(--gray) 70%)'
+      },
+
       backgroundColor: {
         'p': 'var(--primary)',
         's': 'var(--secondary)',
@@ -14,7 +18,7 @@ const config: Config = {
         'a': 'var(--accent)',
         'success': 'var(--success)',
         'warning': 'var(--warning)',
-        'error': 'var(--error)'
+        'error': 'var(--error)',
       },
 
       textColor: {
@@ -24,7 +28,7 @@ const config: Config = {
         'a': 'var(--accent)',
         'success': 'var(--success)',
         'warning': 'var(--warning)',
-        'error': 'var(--error)'
+        'error': 'var(--error)',
       },
 
       fill: {
@@ -34,7 +38,7 @@ const config: Config = {
         'a': 'var(--accent)',
         'success': 'var(--success)',
         'warning': 'var(--warning)',
-        'error': 'var(--error)'
+        'error': 'var(--error)',
       },
 
       stroke: {
@@ -44,7 +48,7 @@ const config: Config = {
         'a': 'var(--accent)',
         'success': 'var(--success)',
         'warning': 'var(--warning)',
-        'error': 'var(--error)'
+        'error': 'var(--error)',
       },
 
       borderColor: {
@@ -54,7 +58,7 @@ const config: Config = {
         'a': 'var(--accent)',
         'success': 'var(--success)',
         'warning': 'var(--warning)',
-        'error': 'var(--error)'
+        'error': 'var(--error)',
       },
 
       dropShadow: {
@@ -71,12 +75,19 @@ const config: Config = {
         pulsing: {
           '0%, 60%, 80%, 100%': {opacity: '0.5'},
           '70%, 90%': {opacity: '1'}
+        },
+
+        gradient: {
+          '0%': {backgroundPosition: '100% 50%'},
+          '75%': {backgroundPosition: '0% 50%'},
+          '100%': {backgroundPosition: '0% 50%'}
         }
       },
 
       animation: {
         floating: 'floating 2s linear infinite',
-        pulsing: 'pulsing 2s ease-in-out infinite'
+        pulsing: 'pulsing 2s ease-in-out infinite',
+        gradient: 'gradient 1.5s ease-in-out infinite'
       }
     },
   },

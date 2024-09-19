@@ -1,14 +1,16 @@
 'use server';
 
+// Types
+import { type APIError } from "@/lib/types/Errors";
+
+
 type CurrentWeather = {
-  weather: [
-    {
+  weather: {
       id: number,
       main: string,
       description: string,
       icon: string
-    }
-  ],
+    }[],
   main: {
     temp: number,
     feels_like: number,
@@ -46,12 +48,7 @@ type CurrentWeather = {
   cod: number
 };
 
-type Error = {
-  code: number, 
-  message: string
-};
-
-export type GetCurrentWeatherReturnType = CurrentWeather | Error | {};
+export type GetCurrentWeatherReturnType = CurrentWeather | APIError | {};
 
 export async function getCurrentWeather(lat: number, lon: number, units: 'standard' | 'metric' | 'imperial' = 'metric'): Promise<GetCurrentWeatherReturnType> {
   const query: string = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${process.env.API_KEY}`;
