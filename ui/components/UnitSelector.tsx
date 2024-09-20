@@ -19,8 +19,8 @@ export default function UnitsSelector({units, setUnits}: {units: Units, setUnits
     <div className="flex justify-center items-center p-1 bg-sl rounded-md shadow text-p">
       {
         availableUnits.map((item, i) =>
-          <div key={i} onClick={() => handleClick(item)} className="relative px-4 py-2 rounded cursor-pointer">
-            <label className="relative pointer-events-none z-[1]">{capitalize(item)}</label>
+          <div key={i} onClick={() => handleClick(item)} className="relative px-2 py-1 sm:px-4 sm:py-2 rounded cursor-pointer">
+            <label className="relative text-sm sm:text-base pointer-events-none z-[1]">{capitalize(item)}</label>
             {
               (units === item) ? <motion.div layoutId='background' className='absolute top-0 left-0 w-full h-full rounded bg-a' /> : null
             }

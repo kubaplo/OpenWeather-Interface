@@ -29,10 +29,10 @@ function SearchResult({index, value, active, setCurrentSearchResult, currentSear
   }
 
   return (
-    <div onMouseEnter={handleMouseEnter} onClick={handleCitySelect} className={clsx("relative flex items-center gap-x-5 w-full h-14 px-5 border-2 rounded-md shadow transition-all cursor-pointer", {"border-a": active, "border-sl": !active})}>
+    <div onMouseEnter={handleMouseEnter} onClick={handleCitySelect} className={clsx("relative flex items-center gap-x-5 w-full min-h-14 px-5 border-2 rounded-md shadow transition-all cursor-pointer", {"border-a": active, "border-sl": !active})}>
       <div className={clsx("absolute top-0 left-0 w-full h-full opacity-25 transition-all", {"bg-a": active, "bg-transparent": !active})}></div>
       <label className="relative text-xl text-center font-semibold cursor-pointer">{index + 1}.</label>
-      <label className="relative text-base w-full cursor-pointer">{value}</label>
+      <label className="relative text-base w-full cursor-pointer break-words overflow-hidden">{value}</label>
       <div className={clsx("flex items-center justify-center gap-x-1", {"visible": active, "invisible": !active})}>
         <KeyboardKey content="↑" />
         <KeyboardKey content="↓" />

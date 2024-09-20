@@ -135,23 +135,33 @@ export default function WeatherCard({city, units}: {city: CityType, units: Units
   else {
     return (
       <div className="flex flex-col items-center w-full max-w-[500px] border border-sl rounded-xl shadow-xl overflow-hidden">
-        <div className="flex justify-between items-center w-full h-20 bg-sl px-5">
-          <label className="text-p text-xl font-bold">{exists(weather.city) ? weather.city : 'City name'}</label>
-          <div className="flex items-center">
+        <div className="flex justify-between items-center w-full min-h-20 bg-sl px-5">
+          <label className="text-p text-xl font-bold break-words overflow-hidden">{exists(weather.city) ? weather.city : 'City name'}</label>
+          <div className="flex flex-col sm:flex-row items-center">
             { (weather.icon) ?
-              <img src={`https://openweathermap.org/img/wn/${weather.icon}@4x.png`} className='w-20 h-20' /> : null
+              <img src={`https://openweathermap.org/img/wn/${weather.icon}@4x.png`} className='w-20 h-20 min-w-20 min-h-20' /> : null
             }
-            <label className="text-p text-xl font-bold">{exists(weather.temp) ? `${weather.temp} ${unitsCollection.temp}` : 'Temp'}</label>
+            <label className="relative top-[-15px] sm:top-0 text-p text-xl font-bold">{exists(weather.temp) ? `${weather.temp} ${unitsCollection.temp}` : 'Temp'}</label>
           </div>
         </div>
 
         <div className="flex flex-col items-center gap-y-5 w-full p-5">
           <label className="text-xl text-center">{exists(weather.description) ? weather.description?.toUpperCase() : 'Weather description'}</label>
           
-          <div className="flex items-center gap-x-5">
+          <div className="hidden sm:flex items-center gap-x-5">
             <Sun className="w-10 h-fit fill-sl" />
             <label className="text-xl text-center">{exists(weather.maxTemp) && exists(weather.minTemp) ? `${weather.maxTemp} ${unitsCollection.temp} / ${weather.minTemp} ${unitsCollection.temp}` : 'MAX / MIN'}</label>
             <Moon className="w-7 h-fit fill-sl" />
+          </div>
+          <div className="flex flex-col items-center gap-y-5 sm:hidden">
+            <div className="flex items-center justify-center gap-x-5">
+              <Sun className="w-10 h-fit fill-sl" />
+              <label className="text-xl text-center">{exists(weather.maxTemp) ? `${weather.maxTemp} ${unitsCollection.temp}` : 'MAX'}</label>
+            </div>
+            <div className="flex items-center justify-center gap-x-5">
+              <Moon className="w-7 h-fit fill-sl" />
+              <label className="text-xl text-center">{exists(weather.minTemp) ? `${weather.minTemp} ${unitsCollection.temp}` : 'MIN'}</label>
+            </div>
           </div>
 
           <div className="flex justify-center items-center gap-x-5 w-full my-3">
