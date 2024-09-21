@@ -137,11 +137,11 @@ export default function WeatherCard({city, units}: {city: CityType, units: Units
       <div className="flex flex-col items-center w-full max-w-[500px] border border-sl rounded-xl shadow-xl overflow-hidden">
         <div className="flex justify-between items-center w-full min-h-20 bg-sl px-5">
           <label className="text-p text-xl font-bold break-words overflow-hidden">{exists(weather.city) ? weather.city : 'City name'}</label>
-          <div className="flex flex-col sm:flex-row items-center">
+          <div className="group flex flex-col sm:flex-row items-center">
             { (weather.icon) ?
               <img src={`https://openweathermap.org/img/wn/${weather.icon}@4x.png`} className='w-20 h-20 min-w-20 min-h-20' /> : null
             }
-            <label className="relative top-[-15px] sm:top-0 text-p text-xl font-bold">{exists(weather.temp) ? `${weather.temp} ${unitsCollection.temp}` : 'Temp'}</label>
+            <label className="relative group-has-[img]:top-[-15px] sm:top-0 text-p text-xl font-bold">{exists(weather.temp) ? `${weather.temp} ${unitsCollection.temp}` : 'Temp'}</label>
           </div>
         </div>
 

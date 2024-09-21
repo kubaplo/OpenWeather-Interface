@@ -15,7 +15,7 @@ type FeatureCardProps = {
 
 export default function FeatureCard({href, Icon, title, description, list}: FeatureCardProps) {
   return (
-    <Link href={href} className="group relative flex flex-col items-center gap-y-5 max-w-[400px] h-[500px] p-5 box-border border border-sl rounded-md shadow-xl hover:translate-y-[-10px] hover:shadow-2xl transition-all cursor-pointer">
+    <Link href={href} className="group relative flex flex-col items-center gap-y-5 max-w-[400px] h-[500px] p-5 box-border border border-sl rounded-md shadow-xl lg:hover:translate-y-[-10px] lg:hover:shadow-2xl transition-all cursor-pointer">
       <div className="flex items-center w-full">
         <Icon className="w-32 h-fit fill-a" />
         <label className="text-xl text-center w-full font-semibold pointer-events-none">{title}</label>

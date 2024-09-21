@@ -10,7 +10,7 @@ import Map from "@/ui/svg/Map";
 
 export default function Page() {
   return (
-    <article className="flex flex-col justify-center items-center gap-y-14 flex-1 w-full p-5 my-20">
+    <article className="flex flex-col justify-center items-center gap-y-14 flex-1 w-full p-5 lg:my-20">
       <div className="flex flex-col justify-center items-center gap-y-2">
         <h1 className="text-3xl sm:text-6xl text-center font-semibold">OpenWeather Interface</h1>
         <h3 className="text-base sm:text-xl text-center">Open-source graphical interface for OpenWeather API</h3>
