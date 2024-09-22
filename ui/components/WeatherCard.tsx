@@ -141,7 +141,7 @@ export default function WeatherCard({city, units}: {city: CityType, units: Units
             { (weather.icon) ?
               <img src={`https://openweathermap.org/img/wn/${weather.icon}@4x.png`} className='w-20 h-20 min-w-20 min-h-20' /> : null
             }
-            <label className="relative group-has-[img]:top-[-15px] sm:top-0 text-p text-xl font-bold">{exists(weather.temp) ? `${weather.temp} ${unitsCollection.temp}` : 'Temp'}</label>
+            <label className="relative group-has-[img]:top-[-15px] sm:group-has-[img]:top-0 text-p text-xl font-bold">{exists(weather.temp) ? `${weather.temp} ${unitsCollection.temp}` : 'Temp'}</label>
           </div>
         </div>
 
