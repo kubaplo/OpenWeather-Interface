@@ -15,6 +15,7 @@ import Error from "@/ui/svg/Error";
 import IconProps from "@/lib/types/IconProps";
 import { GetAirPollutionReturnType } from "@/lib/actions/getAirPollution";
 
+
 type Categories = {
   name: string,
   color: string,

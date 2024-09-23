@@ -61,6 +61,10 @@ const config: Config = {
         'error': 'var(--error)',
       },
 
+      boxShadow: {
+        'around': '0px 0px 10px 2px rgba(0, 0, 0, 0.25)'
+      },
+
       dropShadow: {
         'strong': '0 2px 2px rgba(0, 0, 0, 0.8)'
       },

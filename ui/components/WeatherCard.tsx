@@ -28,6 +28,9 @@ import AirPollutionBadge from '@/ui/components/AirPollutionBadge';
 // Skeletons
 import WeatherCardSkeleton from '@/ui/skeletons/WeatherCardSkeleton';
 
+// Notifications
+import { useNotificationPush } from '@/lib/reducers/NotificationsReducer';
+
 
 type WeatherCardProps = {
   city?: string,
@@ -62,6 +65,8 @@ export default function WeatherCard({city, units}: {city: CityType, units: Units
   const [weather, setWeather] = useState<WeatherCardProps>({});
   const [airPollution, setAirPollution] = useState<GetAirPollutionReturnType>({});
   const [loading, setLoading] = useState(false);
+
+  const pushNotification = useNotificationPush();
 
   var unitsCollection = {
     temp: '',
@@ -120,6 +125,8 @@ export default function WeatherCard({city, units}: {city: CityType, units: Units
         setAirPollution(airPollutionData);
 
         setLoading(false);
+        
+        pushNotification(`Downloaded weather for ${newWeather.city}`);
       }
     }
 
