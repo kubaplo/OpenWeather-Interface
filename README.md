@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Preview
+### Home page
+![Home page preview](/preview/home.gif)
+### Current weather
+![Current weather preview](/preview/current_weather.gif)
+### Notifications
+![Notifications preview](/preview/notifications.gif)
+### Responsiveness
+![Responsiveness preview](/preview/responsiveness.gif)
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Usage
+1. Create `.env` file in the project root folder with the following contents:
+```
+API_KEY=<YOUR OPENWEATHER API KEY>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies using `pnpm` packet manager:
+`pnpm install`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Launch the project in the development mode using: `pnpm dev`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Go to `localhost:3000` in your browser
 
-## Learn More
+# How to get the OpenWeather API key
+OpenWeather API key can be obtained for free after signing up on the [official website](https://home.openweathermap.org/users/sign_up). The free tier allows for 1,000,000 API calls per month.
 
-To learn more about Next.js, take a look at the following resources:
+# Tech stack
+This application was created using the following technologies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. React + Next.js
+2. Typescript
+3. Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+API requests are performed using Next.js feature called 'Server Actions'. It allows you to make requests on the server side. I decided to use this approach to not share the API key with the Client. Because of that, the website can be hosted publicly without the need to worry about leaking the key.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# TODO
+1. **Dashboard** - it will allow you to automatically get current weather for your saved cities (favorite cities will be saved using the browser's local storage).
+2. **5-day forecast** - it will allow you to get weather forecasts for specific cities for the next 5 days. Data will be presented on easy-to-read charts.
+3. **Weather maps** - these will allow you to cover the map of a specific city with different meteorological layers.
